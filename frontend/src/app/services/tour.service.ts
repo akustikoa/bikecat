@@ -8,18 +8,20 @@ import { Location } from '../interfaces/location.interface';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { TourPayload } from '../interfaces/tour-payload.interface';
-
+import { environment } from '../../environments/environment';
 
 @Injectable({
     providedIn: 'root'
 })
 
 export class TourService {
-    private apiUrl = 'http://localhost:3001/api/tours';
-    private daysUrl = 'http://localhost:3001/api/days';
-    private discoverUrl = 'http://localhost:3001/api/discovers';
-    private hotelsUrl = 'http://localhost:3001/api/hotels';
-    private locationsUrl = 'http://localhost:3001/api/locations';
+    private baseUrl = environment.apiUrl;
+
+    private apiUrl = `${this.baseUrl}/tours`;
+    private daysUrl = `${this.baseUrl}/days`;
+    private discoverUrl = `${this.baseUrl}/discovers`;
+    private hotelsUrl = `${this.baseUrl}/hotels`;
+    private locationsUrl = `${this.baseUrl}/locations`;
 
     public isLoading = signal(false);
     public errorMessage = signal<string | null>(null);
@@ -99,7 +101,7 @@ export class TourService {
     // Pujar imatges al backend
     uploadImage(formData: FormData, tourId: number): Observable<{ url: string }> {
         return this.http.post<{ url: string }>(
-            `http://localhost:3001/api/upload?id_tour=${tourId}`,
+            `${this.baseUrl}/upload?id_tour=${tourId}`,
             formData
         );
     }
