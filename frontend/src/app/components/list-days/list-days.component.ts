@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TourService } from '../../services/tour.service';
 import { RouterModule } from '@angular/router';
+import { environment } from '../../../environments/environment';
 
 
 @Component({
@@ -13,6 +14,8 @@ import { RouterModule } from '@angular/router';
 
 export class ListDaysComponent implements OnInit {
   tourDays = this.tourService.tourDays;
+
+  readonly apiUrl = environment.apiUrl;
 
   constructor(private tourService: TourService) { }
 

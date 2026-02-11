@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit, signal } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { TourService } from '../../services/tour.service';
+import { environment } from '../../../environments/environment';
 
 
 
@@ -15,6 +16,8 @@ import { TourService } from '../../services/tour.service';
 
 export class HomeComponent implements OnInit {
   selectedTour = this.tourService.selectedTour;
+
+  readonly apiUrl = environment.apiUrl;
 
   constructor(private tourService: TourService) { }
 

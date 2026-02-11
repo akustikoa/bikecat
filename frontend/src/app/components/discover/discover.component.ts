@@ -2,6 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TourService } from '../../services/tour.service';
 import { RouterModule } from '@angular/router';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-discover',
@@ -13,6 +14,7 @@ import { RouterModule } from '@angular/router';
 export class DiscoverComponent implements OnInit {
   private tourService = inject(TourService);
 
+  readonly apiUrl = environment.apiUrl;
   // Accessos als signals del servei
   tourDiscovers = this.tourService.tourDiscovers;
   tourLocations = this.tourService.tourLocations;

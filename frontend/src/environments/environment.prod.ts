@@ -1,3 +1,4 @@
 export const environment = {
-    apiUrl: 'https://bikecat.onrender.com/api'
+    production: true,
+    apiUrl: 'https://bikecat.onrender.com'
 };

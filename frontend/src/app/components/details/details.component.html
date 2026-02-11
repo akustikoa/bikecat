@@ -22,7 +22,7 @@
     @if (selectedDay()) {
       <h2 class="d-inline text-start">{{ selectedDay()!.titol_etapa }}</h2>
       <img
-        [src]="'http://localhost:3001' + selectedDay()!.imatge_etapa"
+        [src]="apiUrl + selectedDay()!.imatge_etapa"
         class="img-fluid mt-3 mb-5 w-100 rounded-1"
         [alt]="selectedDay()!.titol_etapa"
       />
@@ -57,7 +57,7 @@
       @if (selectedDay()?.elevationImage) {
         <div class="text-center fade-in elevation-profile">
           <img
-            [src]="'http://localhost:3001' + selectedDay()!.elevationImage"
+            [src]="apiUrl + selectedDay()!.elevationImage"
             alt="Perfil d'altitud"
             class="img-fluid rounded shadow mt-0"
             style="max-width: 100%"

@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 
 import { TourService } from '../../services/tour.service';
 import { TourPayload } from '../../interfaces/tour-payload.interface';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-admin-form',
@@ -16,6 +17,8 @@ import { TourPayload } from '../../interfaces/tour-payload.interface';
 export class AdminFormComponent implements OnInit {
   adminForm!: FormGroup;
   tourId!: number | null;
+
+  readonly apiUrl = environment.apiUrl;
 
   constructor(
     public fb: FormBuilder,

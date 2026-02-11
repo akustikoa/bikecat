@@ -8,6 +8,7 @@ import { TourService } from '../../services/tour.service';
 import { Dia } from '../../interfaces/dia.interface';
 import * as mapboxgl from 'mapbox-gl';
 import { Chart, registerables } from 'chart.js';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-details',
@@ -25,6 +26,7 @@ export class DetailsComponent implements OnInit {
   routes: { name: string; color: string; coordinates: [number, number][] }[] = [];
   chart!: Chart;
 
+  readonly apiUrl = environment.apiUrl;
   constructor(
     private route: ActivatedRoute,
     private tourService: TourService,
