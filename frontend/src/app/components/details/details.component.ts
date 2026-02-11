@@ -47,7 +47,8 @@ export class DetailsComponent implements OnInit {
 
         // ✅ Construcció segura de l'enllaç al vídeo Relive
         if (day.reliveUrl) {
-          const url = 'https://www.relive.com/view/' + day.reliveUrl + '/widget?r=embed-site';
+          const url = `https://www.youtube.com/embed/${day.reliveUrl}` +
+            `?autoplay=1&mute=1&controls=1&rel=0&modestbranding=1&iv_load_policy=3&playsinline=1`;
           this.reliveSafeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(url);
         }
       }

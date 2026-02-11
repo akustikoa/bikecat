@@ -10,7 +10,7 @@ import locationRoutes from '../routes/location';
 import discoverRoutes from '../routes/discover';
 import uploadRoutes from '../routes/upload';
 
-import './index'; // Inicialitza relacions i models
+// import './index'; // Inicialitza relacions i models
 import db from '../db/connection';
 
 dotenv.config();

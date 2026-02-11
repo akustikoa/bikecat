@@ -2,7 +2,9 @@
   width: 110px;
 }
 .img_mod {
-  border: 1.2px, solid #c7cacc;
+  border:
+    1.2px,
+    solid #c7cacc;
   box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
 }
 .redtext {
@@ -71,4 +73,48 @@
 .custom-title {
   padding: 0 8px;
   margin-bottom: 0.6rem;
+}
+
+.mapbox-display {
+  display: none;
+}
+
+.elevation-profile {
+  margin-bottom: 40px;
+}
+
+// ____________________________
+
+.video-wrapper {
+  display: flex;
+  justify-content: center;
+  padding-top: 3rem;
+  margin-bottom: 6rem;
+}
+
+/* marc blanc com a la home */
+.video-frame {
+  background: white;
+  padding: 0.1px;
+  border-radius: 0.25rem; // mateix que rounded-1
+  border: 1.2px solid #c7cacc;
+  // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 720px;
+}
+
+/* mantenir proporció */
+.video-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.25rem;
+  border: 0;
 }
