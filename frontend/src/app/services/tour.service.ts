@@ -15,13 +15,14 @@ import { environment } from '../../environments/environment';
 })
 
 export class TourService {
-    private baseUrl = environment.apiUrl;
+    private readonly baseUrl = environment.apiUrl;
+    private readonly apiBase = `${this.baseUrl}/api`;
 
-    private apiUrl = `${this.baseUrl}/tours`;
-    private daysUrl = `${this.baseUrl}/days`;
-    private discoverUrl = `${this.baseUrl}/discovers`;
-    private hotelsUrl = `${this.baseUrl}/hotels`;
-    private locationsUrl = `${this.baseUrl}/locations`;
+    private apiUrl = `${this.apiBase}/tours`;
+    private daysUrl = `${this.apiBase}/days`;
+    private discoverUrl = `${this.apiBase}/discovers`;
+    private hotelsUrl = `${this.apiBase}/hotels`;
+    private locationsUrl = `${this.apiBase}/locations`;
 
     public isLoading = signal(false);
     public errorMessage = signal<string | null>(null);
@@ -101,7 +102,7 @@ export class TourService {
     // Pujar imatges al backend
     uploadImage(formData: FormData, tourId: number): Observable<{ url: string }> {
         return this.http.post<{ url: string }>(
-            `${this.baseUrl}/upload?id_tour=${tourId}`,
+            `${this.apiBase}/upload?id_tour=${tourId}`,
             formData
         );
     }
