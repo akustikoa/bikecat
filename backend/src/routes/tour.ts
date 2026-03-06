@@ -7,11 +7,11 @@ import {
 const tourRouter = Router();
 
 tourRouter.get('/', getTours);
+tourRouter.post('/verify-user-tour', verifyUserTourPassword);
 tourRouter.get('/:id', getTour);
 tourRouter.post('/', createTour);
 tourRouter.put('/:id', updateTour);
 tourRouter.delete('/:id', deleteTour);
-tourRouter.post('/verify-user-tour', verifyUserTourPassword);
 tourRouter.post('/create-full-tour', createFullTour);
 tourRouter.post('/create-base-tour', createBaseTour);
 tourRouter.put('/update-full-tour/:id', updateFullTour);
